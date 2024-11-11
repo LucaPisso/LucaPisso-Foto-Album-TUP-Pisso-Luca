@@ -1,0 +1,11 @@
+<div id="photo-{{ photo.id }}" class="card my-2" style="display: flex;align-items: center;">
+    <div class="card-body" style="align-items: center;">
+        <h5 class="card-title">{{ photo.title }}</h5>
+        <p class="card-description">{{ photo.description }}</p>
+        <img src="{{ photo.image }}" alt="photo" height="200dvh">
+        <div style="margin-top: 1%; display:block; align-items: center;">
+            <button class="btn btn-warning" hx-get="{{ url_for('photo_bp.edit_photo_form', photo_id=photo.id) }}" hx-target="#modal" >Editar</button>
+            <button class="btn btn-danger" hx-delete="{{ url_for('photo_bp.delete_photo', photo_id=photo.id) }}" hx-target="#modal" >Borrar</button>
+        </div>
+    </div>
+</div>
